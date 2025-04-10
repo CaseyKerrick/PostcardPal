@@ -10,7 +10,7 @@ const outputMsg = (year, pattern, arr) => {
   arr.push(`Published in ${year}. Code matches ${pattern}`);
 }
 
-export const dateCode = (code) => {
+export const dexterPressDate = (code) => {
   if (!code) {
     return ['No code entered.'];
   }

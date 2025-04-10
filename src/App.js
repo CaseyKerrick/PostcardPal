@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import { dateCode } from './services/dexterPress';
+import { dexterPressDate } from './services/dexterPress';
+import { curtTeichDate } from './services/curtTeich';
 
 function App() {
 
@@ -10,8 +11,22 @@ function App() {
 
 
   const calculateYear = () => {
-    const answers = dateCode(inputText.trim());
-    setOutput(answers);
+    if (selectedCompany === 'dexterPress') {
+      const answers = dexterPressDate(inputText.trim());
+      setOutput(answers);
+    } else if (selectedCompany === 'curtTeich') {
+      const answers = curtTeichDate(inputText.trim());
+      setOutput(answers);
+    }
+  }
+
+  const setCompany = (company) => {
+    console.log('MADE IT 1')
+    if (company !== selectedCompany) {
+      console.log('MADE IT')
+      setOutput([]);
+    }
+    setSelectedCompany(company);
   }
 
   return (
@@ -22,10 +37,10 @@ function App() {
       </header>
       <div className="main">
         <div className="input">
-          <select className="companySelect" value={selectedCompany}>
+          <select className="companySelect" value={selectedCompany} onChange={(e) => setCompany(e.target.value)}>
             <option value="0" disabled>Select a Postcard company</option>
-            <option value="1" onClick={() => setSelectedCompany('1')}>Curt Teich</option>
-            <option value="2" onClick={() => setSelectedCompany('2')}>Dexter Press</option>
+            <option value="curtTeich">Curt Teich</option>
+            <option value="dexterPress" onClick={() => setCompany('dexterPress')}>Dexter Press</option>
           </select>
           <input type="text" className="userInput" onChange={(e) => setInputText(e.target.value)} />
           <button className="submitButton" onClick={calculateYear}>Submit</button>
