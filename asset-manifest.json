@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/PostcardPal/static/css/main.ef75f44f.css",
+    "main.js": "/PostcardPal/static/js/main.1d57d8fa.js",
+    "static/js/453.e607d231.chunk.js": "/PostcardPal/static/js/453.e607d231.chunk.js",
+    "index.html": "/PostcardPal/index.html",
+    "main.ef75f44f.css.map": "/PostcardPal/static/css/main.ef75f44f.css.map",
+    "main.1d57d8fa.js.map": "/PostcardPal/static/js/main.1d57d8fa.js.map",
+    "453.e607d231.chunk.js.map": "/PostcardPal/static/js/453.e607d231.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ef75f44f.css",
+    "static/js/main.1d57d8fa.js"
+  ]
+}
